@@ -29,7 +29,7 @@ resource "random_string" "random_suffix" {
 
 
 resource "azurerm_resource_group" "hcmx-rg" {
-  name ="hcmx-${random_string.random_suffix.result}"
+  name ="${resource_group_name}-${random_string.random_suffix.result}"
  location            = var.location
  tags = {
     Environment = "Terraform"
